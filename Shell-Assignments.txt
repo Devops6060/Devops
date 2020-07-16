@@ -1,0 +1,107 @@
+###################################################################
+
+1.Create a script that, when run, will display the following environment variables to the console:
+
+USER
+HOME
+HISTCONTROL
+TERM
+
+
+A:
+
+
+echo "printing the Environment Variables USER,HOME,HISTCONTROL,TERM"
+
+echo USER=$USER
+echo HOME=$HOME
+echo HISTCONTROL=$HISTCONTROL
+echo TERM=$TERM
+
+#############################################################################
+
+2.Write a script that sets FOUR variables. Populate the first two with some default value and use command redirection to set the third and fourth value to the date/time of when the script was started and completed. Within the script, be sure to display the values to the terminal when run.
+
+MYUSERNAME
+MYPASSWORD
+STARTOFSCRIPT
+ENDOFSCRIPT
+
+A:
+
+#!/bin/bash
+
+STARTOFSCRIPT=$(date)
+MYUSERNAME=Kittu
+MYPASSWORD=password
+ENDOFSCRIPT=$(date)
+
+
+echo "StartTime: $STARTOFSCRIPT"
+echo "UserName: $MYUSERNAME"
+echo "Password: ${MYPASSWORD//?/*}"
+echo "EndTime: $ENDOFSCRIPT" 
+
+#####################################################################################
+
+3.Develop a script that creates, sets and displays two variables to the terminal when run. Within this script, add comments to explain what the script is doing, what each variable is and, using inline comments, what each command is doing.
+
+
+A:
+
+#!/bin/bash
+# Assign value to variable : A
+A=10
+# Assign value to variable : B
+B=20
+# Addion of variables A and B assign to variable  : C
+C=$(($A + $B))
+#Printing variable C
+echo $C
+
+#######################################################################################
+
+4.Create a simple script that does the following:
+
+Echo a full sentence to the terminal
+Echo a different full sentence, but redirect it to /dev/null
+
+Run and display the results and make sure the statements appear where intended.
+
+
+A:
+
+#!/bin/bash
+#Display the content
+echo "working on linux commands"
+# redirecting to dev/null
+echo "working on shell scripting > /dev/null
+
+
+#############################################################################################
+
+5.Write a script that runs three commands:
+
+Evaluate an arithmetic expression
+Attempt to remove a file that does not exist in the current directory
+Evaluate another arithmetic expression
+
+
+Immediately after each command, echo the exit status of that command to the terminal using the appropriate variable to show success and failure exit codes.
+
+
+A:
+
+#!/bin/bash
+echo "$((3 * (2 + 1)))"
+echo $? # print exit status
+date  # run date command
+rm bash.sh
+echo $? # print exit status
+((x = 4 * (3+1)))
+echo "$x"
+echo $? # print exit status
+
+##############################################################################################
+
+
